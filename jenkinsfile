@@ -1,12 +1,14 @@
 pipeline {
-    agent {
-      label 'checking'
-        }
-      stages {
-         stage('build') {
-               steps {
-                 echo 'Hello world'
+ agent {
+        label 'checkingIS38992'
+    }
+  
+  stages {
+        stage('build') {
+            steps {
+             echo 'Hello world'
+             sh 'wget https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-zip-file.zip'
              }
         }
-     }
+    }
 }
