@@ -16,4 +16,13 @@ pipeline {
         KUSTOMIZE_REPO="github.hpe.com/infosight/kustomize-portal.git"
         BUILD_VERSION="${env.BRANCH_NAME}-${env.GIT_COMMIT}"
      }
+     
+  stages {
+        stage('build') {
+          steps {
+             echo 'Hello world'
+             sh 'wget https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-zip-file.zip'
+             }
+        }
+     }   
  }
