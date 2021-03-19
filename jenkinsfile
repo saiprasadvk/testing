@@ -1,3 +1,8 @@
+@Library(['artifactoryUtils','sonarScanner']) _ 
+
+def protectedBranches = ['main']
+def projectName='Test'
+
 pipeline {
  agent {
         label 'checkingIS38992'
