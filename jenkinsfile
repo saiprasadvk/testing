@@ -17,11 +17,16 @@ pipeline {
      }
      
   stages {
-        stage('build') {
-          steps {
-             echo 'Hello world'
-             sh 'wget https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-zip-file.zip'
-             }
+
+      stage('Checkout') {
+        steps {
+          sh "env"
+          checkout([
+               $class: 'GitSCM',
+               branches: [[name: '${BRANCH_NAME}']],
+               doGenerateSubmoduleConfigurations: false,
+               extensions: [], submoduleCfg: [],
+               userRemoteConfigs: [[credentialsId: 'f78d418b7060a942df0d', url: 'https://github.hpe.com/infosight/nimble-registration-service.git']]
+           ])
         }
-     }   
  }
