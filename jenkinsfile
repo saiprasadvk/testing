@@ -1,5 +1,3 @@
-@Library(['artifactoryUtils','sonarScanner'])
-
 def protectedBranches = ['main']
 def projectName='Test'
 
