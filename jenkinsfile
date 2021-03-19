@@ -9,7 +9,6 @@ pipeline {
   environment {
         DOCKER_REGISTRY="hpeartifacts-infosight-docker-local.jfrog.io"
         GIT_COMMIT = sh (script: 'git rev-parse --short HEAD',returnStdout: true).trim()
-        JAVA_HOME="${tool 'JDK14'}"
         PATH="${env.JAVA_HOME}/bin:${env.PATH}"
         SPRING_PROFILES_ACTIVE="test1"
         PROJECT_NAME="Test"
