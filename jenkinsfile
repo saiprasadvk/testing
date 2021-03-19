@@ -3,12 +3,14 @@ pipeline {
         label 'checkingIS38992'
     }
   
-  stages {
-        stage('build') {
-            steps {
-             echo 'Hello world'
-             sh 'wget https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-zip-file.zip'
-             }
-        }
+  environment {
+        DOCKER_REGISTRY="hpeartifacts-infosight-docker-local.jfrog.io"
+        GIT_COMMIT = sh (script: 'git rev-parse --short HEAD',returnStdout: true).trim()
+        JAVA_HOME="${tool 'JDK11'}"
+        PATH="${env.JAVA_HOME}/bin:${env.PATH}"
+        SPRING_PROFILES_ACTIVE="test1"
+        PROJECT_NAME="nimble-registration"
+        KUSTOMIZE_REPO="github.hpe.com/infosight/kustomize-portal.git"
+        BUILD_VERSION="${env.BRANCH_NAME}-${env.GIT_COMMIT}"
     }
 }
