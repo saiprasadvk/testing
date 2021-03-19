@@ -2,11 +2,11 @@ def protectedBranches = ['main']
 def projectName='Test'
 
 pipeline {
- agent {
+  agent {
         label 'checkingIS38992'
     }
     
- environment {
+  environment {
         DOCKER_REGISTRY="hpeartifacts-infosight-docker-local.jfrog.io"
         GIT_COMMIT = sh (script: 'git rev-parse --short HEAD',returnStdout: true).trim()
         JAVA_HOME="${tool 'JDK11'}"
