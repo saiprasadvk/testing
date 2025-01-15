@@ -1,0 +1,10 @@
+name: my-fist-GithubAction
+
+on: push
+
+jobs:
+  my-first-job:
+    runs-on: ubuntu-latest
+    steps:
+     - name: test-job
+       run: echo "Checking the git flow"
