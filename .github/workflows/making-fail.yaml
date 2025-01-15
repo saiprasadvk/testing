@@ -1,0 +1,10 @@
+name: making-fail
+
+on: push
+
+jobs:
+  make-fail:
+   runs-on: centes-laest
+   steps:
+    - name: fail
+      run: echo "wasted"
