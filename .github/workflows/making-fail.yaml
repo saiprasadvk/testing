@@ -4,7 +4,7 @@ on: push
 
 jobs:
   make-fail:
-   runs-on: centes-laest
+   runs-on: ubuntu-latest
    steps:
     - name: fail
-      run: echo "wasted"
+      runs: echo "wasted"
