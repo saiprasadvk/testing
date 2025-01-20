@@ -1,0 +1,9 @@
+name: "Apply_TF_Plan"
+on:
+  workflow_call:
+jobs:
+  my-first-job:
+    runs-on: ubuntu-latest
+    steps:
+     - name: test-job
+       run: echo "Checking First Flow"
