@@ -1,0 +1,14 @@
+name: "Depends on with two Flows - like a plan and apply"
+on:
+  workflow_dispatch:
+
+jobs:
+  Plan:
+    uses: saiprasadvk/testing/.github/workflows/plan_echo1.yaml@main
+    with:
+      gh_environment: test
+  Apply:
+    needs: Plan
+    uses: saiprasadvk/testing/.github/workflows/plan_echo2.yaml@main
+    with:
+      gh_environment: test
