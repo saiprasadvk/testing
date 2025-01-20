@@ -1,9 +1,19 @@
 name: "Apply_TF_Plan"
 on:
   workflow_call:
+    inputs:
+      gh_environment:
+        description: 'Specifies the GitHub deployment environment.'
+        required: false
+        type: string
+        default: null
 jobs:
   my-first-job:
     runs-on: ubuntu-latest
+    environment: ${{ inputs.gh_environment }}
+    defaults:
+      run:
+        shell: bash    
     steps:
      - name: test-job
        run: echo "Checking First Flow"
