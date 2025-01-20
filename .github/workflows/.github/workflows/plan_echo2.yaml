@@ -1,9 +1,0 @@
-name: "Apply_Second_flow"
-on:
-  workflow_call:
-jobs:
-  my-second-job:
-    runs-on: ubuntu-latest
-    steps:
-     - name: test-job
-       run: echo "Checking Second Flow"
